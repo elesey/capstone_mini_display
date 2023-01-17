@@ -125,8 +125,6 @@ display.clearDisplay();
 
   testscrolltext();    // Draw scrolling text
 
-  testdrawbitmap();    // Draw a small bitmap image
-
   // Invert and restore display, pausing in-between
   display.invertDisplay(true);
   delay(1000);
