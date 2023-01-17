@@ -30,7 +30,7 @@
 #define OLED_MOSI   11
 #define OLED_CLK   12
 #define OLED_DC    10
-#define OLED_CS    -1
+#define OLED_CS    0
 #define OLED_RESET 8
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT,
   OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
