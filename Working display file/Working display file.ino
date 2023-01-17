@@ -28,8 +28,8 @@
 
 // Declaration for SSD1306 display connected using software SPI (default case):
 #define OLED_MOSI   11
-#define OLED_CLK   13
-#define OLED_DC    9
+#define OLED_CLK   12
+#define OLED_DC    10
 #define OLED_CS    -1
 #define OLED_RESET 8
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT,
