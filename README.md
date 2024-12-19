@@ -1,70 +1,88 @@
 # Mini Display Encoder Testing Tool
 
 ## Overview
-The Mini Display Encoder Testing Tool is a diagnostic device developed in collaboration with US Digital as part of a university capstone project. This tool provides a visual interface for testing and troubleshooting encoders before sending them for repairs, helping to streamline the maintenance process.
+A diagnostic device developed for US Digital that provides real-time visualization and testing capabilities for various types of encoders. This tool supports multiple encoder interfaces including QEI (Quadrature), Analog, and PWM, making it an essential troubleshooting instrument.
 
 ## Features
-- Real-time encoder signal visualization
-- Multiple display test patterns
-- Interactive graphical interface
-- Compact and portable design
-- Support for SSD1306 OLED display
+- Multiple encoder interface support:
+  - Quadrature Encoder Interface (QEI)
+  - Analog voltage reading
+  - PWM signal processing (10-bit and 12-bit)
+- Real-time position display
+- Index signal detection
+- Moving average filtering for stable readings
+- Interactive mode selection
+- Reset functionality
+- SSD1306 OLED display interface
 
 ## Hardware Requirements
 - Arduino-compatible microcontroller
-- SSD1306 OLED Display
-- Connection pins:
+- SSD1306 OLED Display (128x32 pixels)
+- Pin Connections:
   - MOSI: Pin 11
   - CLK: Pin 12
-  - DC: Pin 10
-  - CS: Pin 0
+  - DC: Pin 9
+  - CS: Pin 10
   - RESET: Pin 8
+  - Button 1: Pin 2
+  - Button 2: Pin 3
+  - Encoder A: Pin 4
+  - Encoder B: Pin 5
+  - Index: Pin 6
+  - PWM Input: Pin 7
+  - Analog Input: A0
 
 ## Software Dependencies
 - SPI Library
 - Wire Library
-- Adafruit GFX Library
-- Adafruit SSD1306 Library
+- Adafruit_GFX Library
+- Adafruit_SSD1306 Library
+- Bounce2 Library
+- Encoder Library
 
-## Display Capabilities
-- Screen Height: 32 pixels
-- Multiple drawing functions:
-  - Line drawing
-  - Rectangle rendering
-  - Circle drawing
-  - Triangle rendering
-  - Character display
-  - Bitmap animation
-  - Scrolling text
+## Operating Modes
 
-## Installation
-1. Install required libraries through Arduino IDE
-2. Connect the OLED display using the specified pin configuration
-3. Upload the code to your Arduino board
-4. Power on the device
+### QEI Mode
+- Displays quadrature encoder position
+- Supports index signal reset
+- Real-time position updates
 
-## Usage
-The device will automatically run through a series of display tests demonstrating:
-- Basic pixel operations
-- Line drawing patterns
-- Geometric shapes (rectangles, circles, triangles)
-- Text rendering
-- Scrolling animations
-- Bitmap display
+### Analog Mode
+- Voltage measurement (0-5V range)
+- Moving average filtering
+- 3-decimal precision display
 
-## Troubleshooting Functions
-- Visual feedback for encoder signals
-- Signal integrity testing
-- Real-time response monitoring
-- Pattern generation for encoder testing
+### PWM Mode
+- Supports both 10-bit and 12-bit resolution
+- Duty cycle measurement
+- Position calculation
+- Filtered readings with moving average
+
+## Usage Instructions
+1. Power on the device
+2. Use Button 1 to cycle through available modes
+3. Press Button 2 to select desired mode
+4. In QEI mode, Button 2 acts as reset
+5. Display automatically updates with current readings
+
+## Development
+- Written in Arduino C++
+- Modular design for easy maintenance
+- Debounced button inputs
+- Interrupt-driven index detection
+
+## Troubleshooting Features
+- Real-time signal monitoring
+- Noise filtering through averaging
+- Visual feedback for all measurements
+- Auto-scaling display for different modes
 
 ## Contributing
-This project was developed as part of a university capstone program in partnership with US Digital. For modifications or improvements, please submit a pull request.
+This is a capstone project developed for US Digital. For modifications or improvements, please submit a pull request.
 
 ## License
 [Insert appropriate license information]
 
 ## Acknowledgments
 - US Digital for project sponsorship
-- [Your University Name] Capstone Program
-- Adafruit for display libraries
+- Adafruit for display and sensor libraries
